@@ -20,11 +20,11 @@ public class CleverBrain implements Brain
         Piece current = piece;
         
         while (true) {
-            final int yBound = heightLimit - current.getHeight()+1;
-            final int xBound = board.getWidth() - current.getWidth()+1;
+            int yBound = heightLimit - current.getHeight()+1;
+            int xBound = board.getWidth() - current.getWidth()+1;
             for (int x = 0; x<xBound; x++) {
                 int y = board.dropHeight();
-                if (y<yBound) { // piece does not stick up too far
+                if (y<yBound) { 
                     int result = board.place(current, x, y);
                     if (result <= Board.PLACE_ROW_FILLED) {
                         if (result == Board.PLACE_ROW_FILLED) {
